@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Project/models/product.dart';
+import 'package:Project/providers/product.dart';
 // import '../widgets/product_grid.dart';
 
 class Products with ChangeNotifier {
