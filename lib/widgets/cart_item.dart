@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-
-// import '../providers/cart.dart';
+import 'package:provider/provider.dart';
+import '../providers/cart.dart';
 
 class CartItem extends StatelessWidget {
   final String id;
-  // final String productId;
+  final String productId;
   final double price;
   final int quantity;
   final String title;
 
   CartItem(
     this.id,
-    // this.productId,
+    this.productId,
     this.price,
     this.quantity,
     this.title,
@@ -36,10 +35,35 @@ class CartItem extends StatelessWidget {
           vertical: 4,
         ),
       ),
-      // direction: DismissDirection.endToStart,
-      // onDismissed: (direction) {
-      //   Provider.of<Cart>(context, listen: false).removeItem(productId);
-      // },
+      direction: DismissDirection.endToStart,
+      confirmDismiss: (direction) {
+        return showDialog(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: Text('Are you sure?'),
+            content: Text(
+              'Do you want to remove the item from the cart?',
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('No'),
+                onPressed: () {
+                  Navigator.of(ctx).pop(false);
+                },
+              ),
+              FlatButton(
+                child: Text('Yes'),
+                onPressed: () {
+                  Navigator.of(ctx).pop(true);
+                },
+              ),
+            ],
+          ),
+        );
+      },
+      onDismissed: (direction) {
+        Provider.of<Cart>(context, listen: false).removeItem(productId);
+      },
       child: Card(
         margin: EdgeInsets.symmetric(
           horizontal: 15,
