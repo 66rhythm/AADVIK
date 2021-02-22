@@ -1,3 +1,4 @@
+import 'package:Project/providers/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,6 +15,7 @@ class ProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final product = Provider.of<Product>(context);
     final cart = Provider.of<Cart>(context);
+    final authData = Provider.of<Auth>(context, listen: false);
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: ClipRRect(
@@ -36,7 +38,7 @@ class ProductItem extends StatelessWidget {
                   product.isFavorite ? Icons.favorite : Icons.favorite_border,
                 ),
                 onPressed: () {
-                  product.toggleFavoriteStatus();
+                  product.toggleFavoriteStatus(authData.token, authData.userId);
                 },
                 color: Theme.of(context).accentColor),
             title: Text(
