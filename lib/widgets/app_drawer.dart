@@ -1,3 +1,4 @@
+import 'package:Project/screens/cattle_overview_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../screens/orders_screen.dart';
@@ -36,7 +37,8 @@ class AppDrawer extends StatelessWidget {
           title: Text('Know your cattle'),
           onTap: () {
             //Later add camel screen and add it
-            Navigator.of(context).pushReplacementNamed(OrdersScreen.routeName);
+            Navigator.of(context)
+                .pushReplacementNamed(CattleOverviewScreen.roueName);
           },
         ),
         Divider(),
