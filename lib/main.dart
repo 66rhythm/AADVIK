@@ -1,3 +1,5 @@
+import 'package:Project/screens/cattle_detail_screen.dart';
+import 'package:Project/screens/cattle_overview_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import './screens/auth_screen.dart';
@@ -79,6 +81,8 @@ class MyApp extends StatelessWidget {
             OrdersScreen.routeName: (ctx) => OrdersScreen(),
             UserProductsScreen.routeName: (ctx) => UserProductsScreen(),
             EditProductScreen.routeName: (ctx) => EditProductScreen(),
+            CattleOverviewScreen.roueName: (ctx) => CattleOverviewScreen(),
+            // CattleDetailScreen.routeName: (ctx) => CattleDetailScreen(),
           },
         ),
       ),
