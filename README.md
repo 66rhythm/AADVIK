@@ -16,7 +16,7 @@
 ### Screenshots of the project
 
 #### Welcome page
-![welcome and login image](./images/ss1.jpeg)
+![](./images/ss1.jpeg)
 
 #### Dashboard of user
 ![dashboard](./public/dashboard.png)
