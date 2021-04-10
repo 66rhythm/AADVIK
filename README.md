@@ -15,16 +15,11 @@
 
 ### Screenshots of the project
 
-#### Welcome page
+#### Login and Home Page
 ![](./images/ss1.jpeg)
 
-#### Dashboard of user
-![dashboard](./public/dashboard.png)
+#### Application
+![dashboard](./images/ss2.jpeg)
 
-#### Create Assignment (teacher dashboard)
-![assignment creation](./public/create_assign.png)
-
-#### Page showing submission of students
-![submitted work](./public/marks.png)
 
 
